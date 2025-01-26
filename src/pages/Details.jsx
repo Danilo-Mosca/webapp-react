@@ -6,14 +6,15 @@ import { useParams } from "react-router-dom"
 
 export default function Details() {
     const { movies } = useGlobalContext();
+    const { reviews } = useGlobalContext();
     const { id } = useParams();     //Destrutturo useParames e ricavo l'id
-
+    const filteredReviews = reviews.filter((review) => review.movie_id == id.toString());
+    // console.log("Recensioni filtrate:", filteredReviews);
+    
     return (
         <section className="container py-4">
             <div className="row g-3">
-                <div className="col-12 col-md-6 col-lg-4" key={id}>
-                    <MovieDetails data={movies.filter((movie) => movie.id == id.toString(), [0])} />
-                </div>
+                    <MovieDetails dataMovies={movies.filter((movie) => movie.id == id.toString(), [0])} reviewsMovies={filteredReviews} />
             </div>
         </section>
     );

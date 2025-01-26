@@ -23,8 +23,6 @@ function App() {
             <Route path="/movies" >
               <Route index Component={Movies} />
               <Route path=":id" Component={Details} />
-              {/* Rotta per gli id non trovati: inserendo path="*" */}
-              <Route path="*" Component={NotFoundPage} />
             </Route>
           </Route>
           {/* Rotta per le pagine non trovate: inserendo path="*" */}
