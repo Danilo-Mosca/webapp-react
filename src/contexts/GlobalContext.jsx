@@ -28,7 +28,7 @@ const GlobalProvider = ({ children }) => {
                 console.log(err);
             })
             .finally(() => {
-                console.log("Finito: ", movies);
+                console.log("Finito");
             });
     }
 

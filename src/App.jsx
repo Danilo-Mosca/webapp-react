@@ -8,6 +8,7 @@ import About from "./pages/About.jsx"
 import Contacts from "./pages/Contacts.jsx"
 import Movies from "./pages/Movies.jsx"
 import Details from "./pages/Details.jsx"
+import NotFoundPage from "./pages/NotFoundPage.jsx"
 
 function App() {
 
@@ -22,8 +23,12 @@ function App() {
             <Route path="/movies" >
               <Route index Component={Movies} />
               <Route path=":id" Component={Details} />
+              {/* Rotta per gli id non trovati: inserendo path="*" */}
+              <Route path="*" Component={NotFoundPage} />
             </Route>
           </Route>
+          {/* Rotta per le pagine non trovate: inserendo path="*" */}
+          <Route path="*" Component={NotFoundPage} />
         </Routes>
       </BrowserRouter>
     </GlobalProvider>

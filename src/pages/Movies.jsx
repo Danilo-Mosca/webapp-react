@@ -1,3 +1,4 @@
+// Importo il GlobalContext per poter accedere alla variabile di stato movies contenente tutti i movies richiamati dalla API e porterli far consumare al componente Movies
 import { useGlobalContext } from "../contexts/GlobalContext.jsx";
 import Card from "../components/Card.jsx";
 
