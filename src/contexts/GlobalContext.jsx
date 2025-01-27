@@ -12,13 +12,13 @@ const GlobalProvider = ({ children }) => {
     // useState dei movies:
     const [movies, setmovies] = useState([]);
     // useState delle reviews:
-    const [reviews, setreviews] = useState([]);
-
+    // const [reviews, setreviews] = useState([]);
+    // useState del singolo movie:
+    const [singleMovie, setSingleMovie] = useState();
 
     /* Configuro lo useEffect per chiamare l'API per i film popolari solo al caricamento della pagina: */
     useEffect(() => {
         getmovies();
-        getreviews();
     }, []);
 
     function getmovies() {
@@ -35,17 +35,34 @@ const GlobalProvider = ({ children }) => {
             });
     }
 
-    function getreviews() {
-        axios.get(apiUrl + "/reviews")
+    // function getreviews() {
+    //     axios.get(apiUrl + "/reviews")
+    //         .then((res) => {
+    //             console.log("Recensioni: ",res.data.items);
+    //             setreviews(res.data.items);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         })
+    //         .finally(() => {
+    //             console.log("Finito reviews");
+    //         });
+    // }
+
+
+    function getSinglemovie(id) {
+        axios.get(apiUrl + "/movies" + "/" + id)
             .then((res) => {
-                console.log("Recensioni: ",res.data.items);
-                setreviews(res.data.items);
+                console.log("Scheda film intero: ", res.data);
+                setSingleMovie(res.data);
             })
             .catch((err) => {
                 console.log(err);
             })
             .finally(() => {
-                console.log("Finito reviews");
+                console.log("Finito movies");
+                console.log("singleMovie: ", singleMovie);
+
             });
     }
 
@@ -53,8 +70,8 @@ const GlobalProvider = ({ children }) => {
     const collectionData = {
         movies,
         setmovies,
-        reviews,
-        setreviews,
+        singleMovie,
+        getSinglemovie,
     }
 
     return (
