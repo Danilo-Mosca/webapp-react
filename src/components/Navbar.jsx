@@ -11,7 +11,7 @@ export default function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <NavLink to="/" className="navbar-brand">
-                    HomePage
+                    <img src="/img/logo-film.png" alt="Logo film" className="logo" />
                 </NavLink>
                 <button
                     className="navbar-toggler"
