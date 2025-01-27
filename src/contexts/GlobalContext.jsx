@@ -11,8 +11,6 @@ const GlobalContext = createContext();  //crea il Context e gli do il nome Globa
 const GlobalProvider = ({ children }) => {
     // useState dei movies:
     const [movies, setmovies] = useState([]);
-    // useState delle reviews:
-    // const [reviews, setreviews] = useState([]);
     // useState del singolo movie:
     const [singleMovie, setSingleMovie] = useState();
 
@@ -34,24 +32,9 @@ const GlobalProvider = ({ children }) => {
                 console.log("Finito movies");
             });
     }
-
-    // function getreviews() {
-    //     axios.get(apiUrl + "/reviews")
-    //         .then((res) => {
-    //             console.log("Recensioni: ",res.data.items);
-    //             setreviews(res.data.items);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    //         .finally(() => {
-    //             console.log("Finito reviews");
-    //         });
-    // }
-
-
-    function getSinglemovie(id) {
-        axios.get(apiUrl + "/movies" + "/" + id)
+    
+    function getSingleMovie(id) {
+        axios.get(apiUrl + "/movies/" + id)
             .then((res) => {
                 console.log("Scheda film intero: ", res.data);
                 setSingleMovie(res.data);
@@ -71,7 +54,7 @@ const GlobalProvider = ({ children }) => {
         movies,
         setmovies,
         singleMovie,
-        getSinglemovie,
+        getSingleMovie,
     }
 
     return (
