@@ -4,7 +4,7 @@ import axios from "axios";
 
 //Api url e endpoint per axios
 const apiUrl = import.meta.env.VITE_APIURL;
-
+const endPoint = "/movies/"      // EndPoint per le chiamate API
 const GlobalContext = createContext();  //crea il Context e gli do il nome GlobalContext
 
 // Creo il provider customizzato:
@@ -32,7 +32,7 @@ const GlobalProvider = ({ children }) => {
                 console.log("Finito movies");
             });
     }
-    
+
     function getSingleMovie(id) {
         axios.get(apiUrl + "/movies/" + id)
             .then((res) => {
@@ -49,12 +49,28 @@ const GlobalProvider = ({ children }) => {
             });
     }
 
+    /* Chiamata post di axios che crea una recensione per quel film con quello specifico id */
+    function postReview(formData, movie_id) {
+        axios.post(`${apiUrl}${endPoint}${movie_id}/reviews`, formData)
+            .then((res) => {
+                console.log("Chiamata axios per postReview: ", res);
+                getSingleMovie(movie_id);
+            }).catch((error) => {
+                console.log(error);
+
+            }).finally(() => {
+                console.log("Fatto");
+
+            })
+    }
+
     // Oggetto contenente i dati da passare al value per offrirli ai Consumer (i componenti racchiusi nel Provider di GLobalContext):
     const collectionData = {
         movies,
         setmovies,
         singleMovie,
         getSingleMovie,
+        postReview,
     }
 
     return (

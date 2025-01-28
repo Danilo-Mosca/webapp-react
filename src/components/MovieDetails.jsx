@@ -22,7 +22,7 @@ export default function MovieDetails({ dataMovies }) {
                                 <h5 className="card-title">{dataMovies.title}</h5>
                                 <h5 className="card-title">{dataMovies.author}</h5>
                                 <p className="card-text">{dataMovies.abstract}</p>
-                                <Link to='/books/' className="btn btn-primary">Torna alla lista dei film</Link>
+                                <Link to='/movies/' className="btn btn-primary">Torna alla lista dei film</Link>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ export default function MovieDetails({ dataMovies }) {
                         ))}
                     </section>
                     <section>
-                        <ReviewForm />
+                        <ReviewForm movie_id={id} />
                     </section>
                 </>
                 : <Loader />

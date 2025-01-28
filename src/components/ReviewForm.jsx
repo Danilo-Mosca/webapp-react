@@ -1,29 +1,29 @@
 import { useState } from "react";
-import { useParams } from "react-router";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
-function ReviewForm() {
+function ReviewForm({ movie_id }) {
 
-    const { id } = useParams();
-
+    const { postReview } = useGlobalContext();
     const initialForm = {
         name: "",
         text: "",
         vote: "",
-        movie_id: parseInt(id)
     };
-
+    // Variabile di stato contenente i valori inseriti nel form
     const [formData, setFormData] = useState(initialForm);
 
     const onHandelInput = (e) => {
+        // console.log(e.target.value);
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: name === "vote" ? parseInt(value) : value });
     };
 
     const onHandleSubmit = (e) => {
-        e.preventDefault();
-
-        //axios 
+        e.preventDefault()
+        console.log("Dati del form: ", formData);
         console.log(formData);
+        // Richiamo axios nella funzione postReview contenuta nel GlobalContext, così da aggiungere la nuova recensione al database:
+        postReview({ ...formData }, movie_id);
         setFormData(initialForm);
     };
 
