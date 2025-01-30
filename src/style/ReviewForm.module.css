@@ -9,3 +9,8 @@
     background: #c6a664;
     border: #c6a664;
 }
+
+.btn-submit:hover {
+    background: #6c5e41;
+    border: #c6a664;
+}
