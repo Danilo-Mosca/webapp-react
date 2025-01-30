@@ -56,14 +56,14 @@ function ReviewForm({ movie_id }) {
             <form onSubmit={onHandleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Nome</label>
-                    <input type="text" className="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Scrivi il tuo nome..." value={formData.name} onChange={onHandelInput} />
+                    <input type="text" className="form-control mt-3" id="name" name="name" aria-describedby="emailHelp" placeholder="Scrivi il tuo nome..." value={formData.name} onChange={onHandelInput} />
                     {errors.name && (
                         <span className={`error-message ${FormStyle.errorMessage}`}>
                             {errors.name}
                         </span>)}
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="text" className="form-label">Scrivi la tua recensione...</label>
+                    <label htmlFor="text" className="form-label mt-3">Scrivi la tua recensione...</label>
                     <textarea className="form-control" id="text" name="text" rows="3" value={formData.text} onChange={onHandelInput}></textarea>
                     {errors.text && (
                         <span className={`error-message ${FormStyle.errorMessage}`}>
