@@ -24,9 +24,9 @@ function App() {
               <Route index Component={Movies} />
               <Route path=":id" Component={Details} />
             </Route>
+            {/* Rotta per le pagine non trovate: inserendo path="*" */}
+            <Route path="*" Component={NotFoundPage} />
           </Route>
-          {/* Rotta per le pagine non trovate: inserendo path="*" */}
-          <Route path="*" Component={NotFoundPage} />
         </Routes>
       </BrowserRouter>
     </GlobalProvider>

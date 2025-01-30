@@ -1,0 +1,12 @@
+img {
+    height: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1.5;
+}
+
+.category {
+    background-color: #ccccccaa;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

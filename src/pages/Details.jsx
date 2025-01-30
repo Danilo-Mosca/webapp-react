@@ -4,6 +4,7 @@ import MovieDetails from "../components/MovieDetails.jsx";
 // Hook usato per accedere a rotte dinamiche (consente di estrarre i parametri dalla URL, in questo caso mi serve il parametro dell'id):
 import { useParams } from "react-router-dom"
 import { useEffect } from "react";
+import NotFoundPage from "./NotFoundPage.jsx";
 
 export default function Details() {
 
@@ -21,7 +22,10 @@ export default function Details() {
     return (
         <section className="container py-4">
             <div className="row g-3">
-                <MovieDetails dataMovies={singleMovie} />
+                {
+                    singleMovie ? <MovieDetails dataMovies={singleMovie} /> : <NotFoundPage />
+                }
+
             </div>
         </section>
     );
