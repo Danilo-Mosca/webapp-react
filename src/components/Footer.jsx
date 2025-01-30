@@ -13,7 +13,7 @@ export default function Footer() {
                 </div>
                 <div className="h-100 d-flex flex-column">
                     <div>FIlm Productions</div>
-                    <div className={`${FooterStyle.footerInfo} `}>Via Bla bla bla 8, 00042 Palermo </div>
+                    <div className={`${FooterStyle.footerInfo} `}>Via Bla bla bla 8, 00042 Roma </div>
 
                 </div>
 

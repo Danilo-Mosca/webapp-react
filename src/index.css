@@ -138,8 +138,10 @@ footer {
 }
 
 body {
-    background-image: url(/img/back.webp);
+    background-image: url(/img/background-body.webp);
     background-size: cover;
+    /* aspect-ratio: 1 / 1.5; */
+    background-repeat: no-repeat;
 }
 
 .bg-book-detail {

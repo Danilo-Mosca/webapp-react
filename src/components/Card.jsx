@@ -10,7 +10,9 @@ function Card({ data }) {
         <>
             <div className="card h-100 position-relative bg-secondary-subtle card-hover" id={style.idcards}>
                 <div>
-                    <img className="card-img-top" src={imgPath} alt={title} />
+                    <Link to={`/movies/${id}`}>
+                        <img className="card-img-top" src={imgPath} alt={title} />
+                    </Link>
                 </div>
                 <div className="card-body card-description h-100">
                     <h3 className="card-title fw-bolder">{title.length > 20 ? title.substring(0, 20) + "..." : title}</h3>
