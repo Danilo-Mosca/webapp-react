@@ -4,3 +4,8 @@
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+.btn-submit {
+    background: #c6a664;
+    border: #c6a664;
+}

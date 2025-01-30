@@ -30,8 +30,8 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/movies"
-                                className="nav-link"
-                                style={({ isActive }) => (isActive ? { color: "#c6a664" } : {})}
+                                className="nav-link navlink-hover"
+                                style={({ isActive }) => (isActive ? { color: "#543D10" } : {})}
                                 end>
                                 Lista dei film
                             </NavLink>
@@ -40,8 +40,8 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/about"
-                                className="nav-link"
-                                style={({ isActive }) => (isActive ? { color: "c6a664" } : {})}
+                                className="nav-link navlink-hover"
+                                style={({ isActive }) => (isActive ? { color: "543D10" } : {})}
                                 end>
                                 Chi siamo
                             </NavLink>
@@ -50,8 +50,8 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/contacts"
-                                className="nav-link"
-                                style={({ isActive }) => (isActive ? { color: "c6a664" } : {})}
+                                className="nav-link navlink-hover"
+                                style={({ isActive }) => (isActive ? { color: "543D10" } : {})}
                                 end>
                                 Contatti
                             </NavLink>

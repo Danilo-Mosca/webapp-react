@@ -81,7 +81,7 @@ function ReviewForm({ movie_id }) {
                         </span>
                     )}
                 </div>
-                <button type="submit" className="btn btn-primary">Inserisci commento</button>
+                <button type="submit" className={`btn btn-primary ${FormStyle["btn-submit"]}`}>Inserisci commento</button>
             </form>
         </>
     );
